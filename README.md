@@ -1,5 +1,5 @@
 # dearyanbing.github.io
-<a href="dearyanbing.github.io/index%20(1).html" target="_blank" rel="noopener">Yanbing's_profile_here</a>
+<a href="file:///Users/yanbingzhao/Documents/dearyanbing.github.io/index%20(1).html" target="_blank" rel="noopener">Yanbing's_profile_here</a>
 
 <br>Welcome, this is Yanbing.
 <br>Are you looking for more information about me?
