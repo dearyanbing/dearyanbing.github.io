@@ -1,0 +1,429 @@
+<!-- Generated with Claude -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yanbing Zhao — Business Analytics Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+      /* ============================================================
+       DESIGN TOKENS
+       ============================================================ */
+      :root {
+        --ink: #1a2332;
+        --ink-soft: #4a5568;
+        --paper: #f5f6f4;
+        --card: #ffffff;
+        --line: #dce1de;
+        --accent: #e8622c;   /* signal orange — data highlight */
+        --accent-soft: #fbe3d6;
+        --teal: #2f7a78;     /* secondary data color */
+        --teal-soft: #dcece9;
+        --radius: 10px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Inter', Arial, Helvetica, sans-serif;
+        color: var(--ink);
+        background:
+          linear-gradient(90deg, rgba(26,35,50,0.035) 1px, transparent 1px),
+          linear-gradient(rgba(26,35,50,0.035) 1px, transparent 1px),
+          var(--paper);
+        background-size: 28px 28px;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 56px 24px 80px;
+      }
+
+      /* ---------- HEADER ---------- */
+      header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .cell-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        color: var(--teal);
+        background: var(--teal-soft);
+        border: 1px solid rgba(47, 122, 120, 0.25);
+        border-radius: 4px;
+        padding: 3px 9px;
+        margin-bottom: 18px;
+      }
+
+      .photo {
+        width: 132px;
+        height: 132px;
+        border-radius: 50%;
+        background: var(--card);
+        border: 2px dashed var(--accent);
+        margin: 0 auto 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--ink-soft);
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        text-align: center;
+        line-height: 1.4;
+      }
+
+      /* Uncomment / use this once a real photo is added:
+      .photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+      */
+
+      header h1 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 34px;
+        letter-spacing: -0.01em;
+        margin-bottom: 10px;
+      }
+
+      header .role {
+        font-size: 15px;
+        color: var(--ink-soft);
+        margin-bottom: 18px;
+      }
+
+      .chip-row {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .chip {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        color: var(--accent);
+        background: var(--accent-soft);
+        border: 1px solid rgba(232, 98, 44, 0.25);
+        border-radius: 4px;
+        padding: 4px 10px;
+      }
+
+      /* ---------- TABS ---------- */
+      .tabs {
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 32px;
+      }
+
+      .tab-button {
+        position: relative;
+        padding: 12px 4px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        color: var(--ink-soft);
+        transition: color 0.15s ease;
+      }
+
+      .tab-button:hover {
+        color: var(--ink);
+      }
+
+      .tab-button.active {
+        color: var(--ink);
+      }
+
+      .tab-button.active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        height: 2px;
+        background: var(--accent);
+      }
+
+      .tab-button:focus-visible {
+        outline: 2px solid var(--teal);
+        outline-offset: 3px;
+      }
+
+      /* ---------- TAB CONTENT ---------- */
+      .tab-content {
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
+        animation: fadeIn 0.25s ease;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(4px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 34px;
+      }
+
+      .panel p {
+        font-size: 15.5px;
+        color: var(--ink-soft);
+        margin-bottom: 16px;
+      }
+
+      .panel p:last-child {
+        margin-bottom: 0;
+      }
+
+      .panel strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      .panel a {
+        color: var(--teal);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(47, 122, 120, 0.35);
+      }
+
+      .panel a:hover {
+        border-bottom-color: var(--teal);
+      }
+
+      /* ---------- PROJECT CARDS ---------- */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        background: var(--card);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(26, 35, 50, 0.08);
+      }
+
+      .card-photo-wrap {
+        position: relative;
+        height: 130px;
+        background: var(--teal-soft);
+        border-bottom: 1px solid var(--line);
+        overflow: hidden;
+      }
+
+      .card-photo-wrap::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 4px;
+        background: var(--accent);
+      }
+
+      .card-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .card-text {
+        padding: 16px;
+      }
+
+      .card-text .tag {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--teal);
+        letter-spacing: 0.04em;
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .card-text h3 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .card-text p {
+        font-size: 13.5px;
+        color: var(--ink-soft);
+      }
+
+      /* ---------- MOBILE ---------- */
+      @media (max-width: 640px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        header h1 {
+          font-size: 28px;
+        }
+        .panel {
+          padding: 24px;
+        }
+        .tabs {
+          gap: 18px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .card, .tab-content.active { transition: none; animation: none; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- ============================================================
+         HEADER: photo, name, experiences
+         ============================================================ -->
+      <header>
+        <div class="cell-tag">Welcome, I am: </div>
+        <!-- Replace this div with <img src="your-photo.jpg" class="photo"> once a real photo is added -->
+        <h1>Yanbing Zhao</h1>
+        <p class="role">Business Analytics Student</p>
+
+        <div class="chip-row">
+          <span class="chip">SQL</span>
+          <span class="chip">Python</span>
+          <span class="chip">Data Visualization</span>
+        </div>
+      </header>
+
+      <!-- ============================================================
+         TABS
+         ============================================================ -->
+      <div class="tabs">
+        <button class="tab-button active" onclick="showTab('about', event)">
+          About Me
+        </button>
+        <button class="tab-button" onclick="showTab('projects', event)">
+          Projects
+        </button>
+      </div>
+
+      <!-- ---------- TAB 1: ABOUT ME ---------- -->
+      <div id="about" class="tab-content active">
+        <div class="panel">
+          <p>
+            Hello! I'm <strong>Yanbing Zhao</strong>, a prospective Business Analyst with a background in Advertising and experience in data analysis using SQL and Python.
+          </p>
+
+          <p>
+            I previously worked as a <strong>Product Manager Intern</strong> at
+            <a href="https://www.wagas.com.cn/index_en.html" target="_blank" rel="noopener">Wagas</a>,
+            where I analyzed sales performance, supported product launches, and collaborated with cross-functional teams.
+          </p>
+
+          <p>
+            I also worked as a <strong>Marketing Intern</strong> at
+            <a href="https://pfdm.ai/" target="_blank" rel="noopener">Play For Dream</a>,
+            helping manage global social media campaigns and collaborating with international content creators.
+          </p>
+
+          <p>
+            My career goal is to become a Business Analyst who leverages data to support strategic decision-making and solve real-world business problems.
+          </p>
+        </div>
+      </div>
+
+      <!-- ---------- TAB 2: PROJECTS ---------- -->
+      <div id="projects" class="tab-content">
+        <div class="cards">
+          <!-- CARD 1 -->
+          <div class="card">
+            <div class="card-photo-wrap">
+              <img src="index pics/socialmedia pic.png" class="card-photo" alt="Social media marketing analytics project">
+            </div>
+            <div class="card-text">
+              <span class="tag">Python · Statistics</span>
+              <h3>Social Media Marketing Analytics</h3>
+              <p>Used Python and statistical analysis to examine 789 Instagram posts and identify factors influencing engagement.</p>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="card">
+            <div class="card-photo-wrap">
+              <img src="index pics/wagas.png" class="card-photo" alt="Restaurant sales dashboard project">
+            </div>
+            <div class="card-text">
+              <span class="tag">SQL · Excel</span>
+              <h3>Restaurant Sales Dashboard</h3>
+              <p>Used SQL and Excel to analyze sales performance across stores.</p>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="card">
+            <div class="card-photo-wrap">
+              <img src="index pics/erd.png" class="card-photo" alt="Database design ERD project">
+            </div>
+            <div class="card-text">
+              <span class="tag">ERD · SQL</span>
+              <h3>Database Design Project</h3>
+              <p>Designed a relational database using ERD and SQL.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+       SIMPLE TAB SWITCHING SCRIPT
+       ============================================================ -->
+    <script>
+      function showTab(id, evt) {
+        // hide all tab contents
+        document.querySelectorAll(".tab-content").forEach(function (el) {
+          el.classList.remove("active");
+        });
+        // remove active state from all buttons
+        document.querySelectorAll(".tab-button").forEach(function (btn) {
+          btn.classList.remove("active");
+        });
+        // show the selected tab + highlight the clicked button
+        document.getElementById(id).classList.add("active");
+        evt.currentTarget.classList.add("active");
+      }
+    </script>
+  </body>
+</html>
