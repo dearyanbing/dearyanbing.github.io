@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
       /* ============================================================
@@ -16,10 +17,11 @@
       :root {
         --ink: #1a2332;
         --ink-soft: #4a5568;
-        --paper: #f5f6f4;
+        --paper: #f9f9f8;
         --card: #ffffff;
         --line: #dce1de;
-        --accent: #e8622c;   /* signal orange — data highlight */
+        --accent: #df6117;   /* deep amber — data highlight */
+        --accent0: #ff6a2e; 
         --accent-soft: #fbe3d6;
         --teal: #2f7a78;     /* secondary data color */
         --teal-soft: #dcece9;
@@ -39,74 +41,57 @@
       body {
         font-family: 'Inter', Arial, Helvetica, sans-serif;
         color: var(--ink);
-        background:
-          linear-gradient(90deg, rgba(26,35,50,0.035) 1px, transparent 1px),
-          linear-gradient(rgba(26,35,50,0.035) 1px, transparent 1px),
-          var(--paper);
-        background-size: 28px 28px;
-        line-height: 1.6;
+        background: var(--card);
+        line-height: 1.65;
       }
 
       .container {
-        max-width: 880px;
+        max-width: 900px;
         margin: 0 auto;
-        padding: 56px 24px 80px;
+        padding: 56px 24px 64px;
       }
 
       /* ---------- HEADER ---------- */
       header {
         text-align: center;
         margin-bottom: 40px;
+        color: var(--accent0);
       }
 
-      .cell-tag {
+      .eyebrow {
         display: inline-flex;
         align-items: center;
         gap: 6px;
         font-family: 'IBM Plex Mono', monospace;
         font-size: 12px;
-        letter-spacing: 0.06em;
-        color: var(--accent);
-        background: var(--teal-soft);
-        border: 1px solid rgba(47, 122, 120, 0.25);
-        border-radius: 4px;
-        padding: 3px 9px;
-        margin-bottom: 18px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--teal);
+        margin-bottom: 16px;
       }
-
-      .photo {
-        width: 132px;
-        height: 132px;
-        border-radius: 50%;
-        background: var(--card);
-        border: 2px dashed var(--accent);
-        margin: 0 auto 22px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--ink-soft);
-        font-family: 'IBM Plex Mono', monospace;
-        font-size: 11px;
-        text-align: center;
-        line-height: 1.4;
-      }
-
-      /* Uncomment / use this once a real photo is added:
-      .photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-      */
 
       header h1 {
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: 'Lora', Georgia, serif;
         font-weight: 700;
-        font-size: 34px;
+        font-size: 38px;
+        color: var(--accent0);
         letter-spacing: -0.01em;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
       }
 
       header .role {
+        font-family: 'Lora', Georgia, serif;
+        font-size: 16px;
+        font-style: italic;
+        color: var(--ink-soft);
+        margin-bottom: 14px;
+      }
+
+      header .tagline {
+        max-width: 520px;
+        margin: 0 auto 20px;
         font-size: 15px;
-        color: var(--accent);
-        margin-bottom: 18px;
+        color: var(--ink-soft);
       }
 
       .chip-row {
@@ -114,6 +99,7 @@
         justify-content: center;
         flex-wrap: wrap;
         gap: 8px;
+        margin-bottom: 22px;
       }
 
       .chip {
@@ -121,42 +107,69 @@
         font-size: 12px;
         color: var(--accent);
         background: var(--accent-soft);
-        border: 1px solid rgba(232, 98, 44, 0.25);
+        border: 1px solid rgba(193, 87, 26, 0.25);
         border-radius: 4px;
         padding: 4px 10px;
       }
 
-      /* ---------- TABS ---------- */
-      .tabs {
+      .contact-row {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .contact-row a {
+        font-family: 'Inter', sans-serif;
+        font-size: 13.5px;
+        font-weight: 500;
+        color: var(--ink);
+        text-decoration: none;
+        padding-bottom: 2px;
+        border-bottom: 1px solid var(--line);
+        transition: border-color 0.15s ease, color 0.15s ease;
+      }
+
+      .contact-row a:hover {
+        color: var(--teal);
+        border-bottom-color: var(--teal);
+      }
+
+      /* ---------- SECTION NAV (sticky, scrolls to sections) ---------- */
+      .section-nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
         display: flex;
         justify-content: center;
         gap: 28px;
+        background: rgba(245, 246, 244, 0.92);
+        backdrop-filter: blur(6px);
         border-bottom: 1px solid var(--line);
-        margin-bottom: 32px;
+        margin-bottom: 40px;
+        padding: 4px 0;
       }
 
-      .tab-button {
+      .nav-link {
         position: relative;
         padding: 12px 4px;
-        border: none;
-        background: none;
-        cursor: pointer;
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: 'Lora', Georgia, serif;
         font-weight: 600;
-        font-size: 15px;
+        font-size: 15.5px;
         color: var(--ink-soft);
+        text-decoration: none;
         transition: color 0.15s ease;
       }
 
-      .tab-button:hover {
+      .nav-link:hover {
         color: var(--ink);
       }
 
-      .tab-button.active {
+      .nav-link.active {
         color: var(--ink);
       }
 
-      .tab-button.active::after {
+      .nav-link.active::after {
         content: "";
         position: absolute;
         left: 0;
@@ -166,30 +179,34 @@
         background: var(--accent);
       }
 
-      .tab-button:focus-visible {
+      .nav-link:focus-visible {
         outline: 2px solid var(--teal);
         outline-offset: 3px;
       }
 
-      /* ---------- TAB CONTENT ---------- */
-      .tab-content {
-        display: none;
-      }
-      .tab-content.active {
-        display: block;
-        animation: fadeIn 0.25s ease;
+      /* ---------- PAGE SECTIONS ---------- */
+      .page-section {
+        scroll-margin-top: 64px;
+        margin-bottom: 56px;
       }
 
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(4px); }
-        to { opacity: 1; transform: translateY(0); }
+      .page-section:last-of-type {
+        margin-bottom: 0;
+      }
+
+      .section-heading {
+        font-family: 'Lora', Georgia, serif;
+        font-weight: 600;
+        font-size: 22px;
+        color: var(--accent0);
+        margin-bottom: 18px;
       }
 
       .panel {
         background: var(--card);
         border: 1px solid var(--line);
         border-radius: var(--radius);
-        padding: 34px;
+        padding: 36px;
       }
 
       .panel p {
@@ -215,6 +232,91 @@
 
       .panel a:hover {
         border-bottom-color: var(--teal);
+      }
+
+      .section-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11.5px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--teal);
+        display: block;
+        margin: 28px 0 10px;
+      }
+
+      .section-label:first-child {
+        margin-top: 0;
+      }
+
+      /* ---------- EDUCATION ROW ---------- */
+      .edu-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .edu-row:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .edu-row .edu-name {
+        font-family: 'Lora', Georgia, serif;
+        font-weight: 600;
+        font-size: 15px;
+        color: var(--ink);
+      }
+
+      .edu-row .edu-meta {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        color: var(--ink-soft);
+      }
+
+      /* ---------- SKILLS ---------- */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .skill-group {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px;
+      }
+
+      .skill-group h4 {
+        font-family: 'Lora', Georgia, serif;
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .skill-group ul {
+        list-style: none;
+      }
+
+      .skill-group li {
+        font-size: 13.5px;
+        color: var(--ink-soft);
+        padding: 5px 0 5px 16px;
+        position: relative;
+      }
+
+      .skill-group li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 12px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent);
       }
 
       /* ---------- PROJECT CARDS ---------- */
@@ -253,6 +355,18 @@
         background: var(--accent);
       }
 
+      .card-index {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: var(--teal);
+        background: rgba(255,255,255,0.9);
+        border-radius: 3px;
+        padding: 2px 6px;
+      }
+
       .card-photo {
         width: 100%;
         height: 100%;
@@ -274,7 +388,7 @@
       }
 
       .card-text h3 {
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: 'Lora', Georgia, serif;
         font-size: 16px;
         font-weight: 600;
         margin-bottom: 8px;
@@ -285,9 +399,28 @@
         color: var(--ink-soft);
       }
 
+      /* ---------- FOOTER ---------- */
+      footer {
+        text-align: center;
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+        font-size: 12.5px;
+        color: var(--ink-soft);
+      }
+
+      footer a {
+        color: var(--teal);
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
       /* ---------- MOBILE ---------- */
       @media (max-width: 640px) {
-        .cards {
+        .cards, .skills-grid {
           grid-template-columns: 1fr;
         }
         header h1 {
@@ -296,14 +429,18 @@
         .panel {
           padding: 24px;
         }
-        .tabs {
+        .section-nav {
           gap: 18px;
+        }
+        .edu-row {
+          flex-direction: column;
+          gap: 2px;
         }
       }
 
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
-        .card, .tab-content.active { transition: none; animation: none; }
+        .card { transition: none; }
       }
     </style>
   </head>
@@ -311,38 +448,47 @@
   <body>
     <div class="container">
       <!-- ============================================================
-         HEADER: photo, name, experiences
+         HEADER: name, role, tagline, skill chips, contact links
          ============================================================ -->
       <header>
-        <div class="cell-tag">Welcome to my page, I am: </div>
-        <!-- Replace this div with <img src="your-photo.jpg" class="photo"> once a real photo is added -->
+        <div class="eyebrow">Welcome to My Portfolio</div>
+
         <h1>Yanbing Zhao</h1>
-        <p class="role">McGill MM_Analytics Student</p>
+        <p class="role">MM Analytics Student· McGill University</p>
+        <p class="tagline">
+          Aspiring to be a Business Analyst, I have an advertising background and hands-on
+          experience in SQL, Python, and Power BI.
+        </p>
 
         <div class="chip-row">
           <span class="chip">SQL</span>
           <span class="chip">Python</span>
-          <span class="chip">Data Visualization</span>
+          <span class="chip">Power BI</span>
+        </div>
+
+        <!-- Replace the placeholder links below with your real email / LinkedIn / GitHub -->
+        <div class="contact-row">
+          <a href="mailto:yanbing.zhao2@mail.mcgill.ca">Email</a>
+          <!-- <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a> -->
+          <a href="https://github.com/dearyanbing" target="_blank" rel="noopener">GitHub</a>
         </div>
       </header>
 
       <!-- ============================================================
-         TABS
+         STICKY SECTION NAV
          ============================================================ -->
-      <div class="tabs">
-        <button class="tab-button active" onclick="showTab('about', event)">
-          About Me
-        </button>
-        <button class="tab-button" onclick="showTab('projects', event)">
-          Projects
-        </button>
-      </div>
+      <nav class="section-nav">
+        <a class="nav-link active" href="#about">About Me</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#projects">Projects</a>
+      </nav>
 
-      <!-- ---------- TAB 1: ABOUT ME ---------- -->
-      <div id="about" class="tab-content active">
+      <!-- ---------- SECTION: ABOUT ME ---------- -->
+      <section id="about" class="page-section">
+        <h2 class="section-heading">About Me</h2>
         <div class="panel">
           <p>
-            Hello! I'm <strong>Yanbing Zhao</strong>, a prospective Business Analyst with a background in Advertising and experience in data analysis using SQL and Python.
+            Hi all, this is <strong>Yanbing</strong>, a prospective Business Analyst with a background in Advertising and experience in data analysis using SQL and Python.
           </p>
 
           <p>
@@ -360,16 +506,56 @@
           <p>
             My career goal is to become a Business Analyst who leverages data to support strategic decision-making and solve real-world business problems.
           </p>
-        </div>
-      </div>
 
-      <!-- ---------- TAB 2: PROJECTS ---------- -->
-      <div id="projects" class="tab-content">
+          <span class="section-label">Education</span>
+          <div class="edu-row">
+            <span class="edu-name">Master of Management in Analytics — McGill University</span>
+            <span class="edu-meta">In progress</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- SECTION: SKILLS ---------- -->
+      <section id="skills" class="page-section">
+        <h2 class="section-heading">Skills</h2>
+        <div class="panel">
+          <div class="skills-grid">
+            <div class="skill-group">
+              <h4>Data Analysis</h4>
+              <ul>
+                <li>SQL</li>
+                <li>Python</li>
+                <li>Statistical Analysis</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h4>Tools &amp; Reporting</h4>
+              <ul>
+                <li>Excel</li>
+                <li>Power Point</li>
+                <li>Data Visualization</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h4>Extra Curricular Skills</h4>
+              <ul>
+                <li>Horary Astrology</li>
+                <li>Tarot Reading</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- SECTION: PROJECTS ---------- -->
+      <section id="projects" class="page-section">
+        <h2 class="section-heading">Projects</h2>
         <div class="cards">
           <!-- CARD 1 -->
           <div class="card">
             <div class="card-photo-wrap">
               <img src="index_pics/socialmedia_pic.png" class="card-photo" alt="Social media marketing analytics project">
+              <span class="card-index">01</span>
             </div>
             <div class="card-text">
               <span class="tag">Python · Statistics</span>
@@ -382,6 +568,7 @@
           <div class="card">
             <div class="card-photo-wrap">
               <img src="index_pics/wagas.png" class="card-photo" alt="Restaurant sales dashboard project">
+              <span class="card-index">02</span>
             </div>
             <div class="card-text">
               <span class="tag">SQL · Excel</span>
@@ -394,6 +581,7 @@
           <div class="card">
             <div class="card-photo-wrap">
               <img src="index_pics/erd.png" class="card-photo" alt="Database design ERD project">
+              <span class="card-index">03</span>
             </div>
             <div class="card-text">
               <span class="tag">ERD · SQL</span>
@@ -402,26 +590,42 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+      <footer>
+        © 2026 Yanbing Zhao &nbsp;·&nbsp; <a href="mailto:yanbing.zhao2@mail.mcgill.ca">yanbing.zhao2@mail.mcgill.ca</a>
+      </footer>
     </div>
 
     <!-- ============================================================
-       SIMPLE TAB SWITCHING SCRIPT
+       SCROLL-SPY: highlight the nav link for the section in view
        ============================================================ -->
     <script>
-      function showTab(id, evt) {
-        // hide all tab contents
-        document.querySelectorAll(".tab-content").forEach(function (el) {
-          el.classList.remove("active");
-        });
-        // remove active state from all buttons
-        document.querySelectorAll(".tab-button").forEach(function (btn) {
-          btn.classList.remove("active");
-        });
-        // show the selected tab + highlight the clicked button
-        document.getElementById(id).classList.add("active");
-        evt.currentTarget.classList.add("active");
-      }
+      var sections = document.querySelectorAll(".page-section");
+      var navLinks = document.querySelectorAll(".nav-link");
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              navLinks.forEach(function (link) {
+                link.classList.toggle(
+                  "active",
+                  link.getAttribute("href") === "#" + entry.target.id
+                );
+              });
+            }
+          });
+        },
+        { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+      );
+
+      sections.forEach(function (section) {
+        observer.observe(section);
+      });
     </script>
   </body>
 </html>
