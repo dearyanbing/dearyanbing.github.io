@@ -1,0 +1,69 @@
+- image: /images/travel/img_7228.jpg
+  thumbnail: /images/travel/img_7228_thumb.jpg
+  alt: "Palm trees along a beach beneath an orange sunset"
+  width: 1600
+  height: 1200
+  thumbnail_width: 800
+
+- image: /images/travel/img_0437.jpg
+  thumbnail: /images/travel/img_0437_thumb.jpg
+  alt: "Sunlight filtering through a large tree above stone temple ruins"
+  width: 1200
+  height: 1600
+  thumbnail_width: 600
+
+- image: /images/travel/img_0695.jpg
+  thumbnail: /images/travel/img_0695_thumb.jpg
+  alt: "A pink and purple evening sky above trees and a white balustrade"
+  width: 1296
+  height: 1600
+  thumbnail_width: 648
+
+- image: /images/travel/img_0943.jpg
+  thumbnail: /images/travel/img_0943_thumb.jpg
+  alt: "Warm lights reflected in water beneath palm trees at dusk"
+  width: 1200
+  height: 1600
+  thumbnail_width: 600
+
+- image: /images/travel/img_0083.jpg
+  thumbnail: /images/travel/img_0083_thumb.jpg
+  alt: "Blossoming branches illuminated by streetlights at night"
+  width: 1200
+  height: 1600
+  thumbnail_width: 600
+
+- image: /images/travel/img_7137.jpg
+  thumbnail: /images/travel/img_7137_thumb.jpg
+  alt: "Sunset above the clouds seen beside an airplane wing"
+  width: 1200
+  height: 1600
+  thumbnail_width: 600
+
+- image: /images/travel/img_20200529_090453.jpg
+  thumbnail: /images/travel/img_20200529_090453_thumb.jpg
+  alt: "Sunlight and a small rainbow across a green garden"
+  width: 1600
+  height: 1600
+  thumbnail_width: 800
+
+- image: /images/travel/img_6425.jpg
+  thumbnail: /images/travel/img_6425_thumb.jpg
+  alt: "A bouquet of yellow, pink, and pale blue flowers"
+  width: 1200
+  height: 1600
+  thumbnail_width: 600
+
+- image: /images/travel/img_6511.jpg
+  thumbnail: /images/travel/img_6511_thumb.jpg
+  alt: "Sunlight shining through a small opening in a hand"
+  width: 1200
+  height: 1600
+  thumbnail_width: 600
+
+- image: /images/travel/img_9263.jpg
+  thumbnail: /images/travel/img_9263_thumb.jpg
+  alt: "A narrow path between buildings leading toward autumn trees"
+  width: 1291
+  height: 1600
+  thumbnail_width: 645

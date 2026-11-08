@@ -1,0 +1,13 @@
+<div class="travel-gallery">
+  {% for photo in site.data.travel %}
+  <a class="travel-gallery__item" href="{{ photo.image | relative_url }}" aria-label="View larger photo: {{ photo.alt | escape }}">
+    <img src="{{ photo.thumbnail | relative_url }}"
+         srcset="{{ photo.thumbnail | relative_url }} {{ photo.thumbnail_width }}w, {{ photo.image | relative_url }} {{ photo.width }}w"
+         sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 924px) calc((100vw - 3rem) / 2), 400px"
+         alt="{{ photo.alt | escape }}"
+         width="{{ photo.width }}" height="{{ photo.height }}"
+         loading="{% if include.eager and forloop.index <= 2 %}eager{% else %}lazy{% endif %}"
+         decoding="async">
+  </a>
+  {% endfor %}
+</div>
