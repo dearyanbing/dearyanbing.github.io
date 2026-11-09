@@ -4,7 +4,7 @@ title: "Post-Sunrise Ankor Wat"
 ---
 
 <!-- Blossoms at night. Add your short story below; an optional title goes above. -->
-Got up at 3 am but stilled missed their epic sunrise. Why?
+Got up at 3 a.m. but still missed their epic sunrise. Why?
 
 My incapability of riding a **mountain** **bike** clearly kept me falling along the way, and my miscalculation of the distance made the situation more helpless.
 
