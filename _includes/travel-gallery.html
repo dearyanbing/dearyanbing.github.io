@@ -3,13 +3,13 @@
   {% for photo in site.data.travel %}
   {% assign story = site.travel_stories | where: "photo", photo.story | first %}
   <div class="travel-card">
-    <div class="travel-card__inner">
+    <div class="travel-card__inner" style="aspect-ratio: {{ photo.width }} / {{ photo.height }};">
       <button class="travel-card__photo" type="button"
               aria-label="Read the story behind this photo: {{ photo.alt | escape }}"
               aria-expanded="false" aria-controls="travel-story-{{ photo.story }}">
         <img src="{{ photo.thumbnail | relative_url }}"
              srcset="{{ photo.thumbnail | relative_url }} {{ photo.thumbnail_width }}w, {{ photo.image | relative_url }} {{ photo.width }}w"
-             sizes="(max-width: 479px) calc(100vw - 2rem), (max-width: 799px) calc((100vw - 3rem) / 2), 300px"
+             sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 759px) calc((100vw - 3rem) / 2), 352px"
              alt="{{ photo.alt | escape }}"
              width="{{ photo.width }}" height="{{ photo.height }}"
              loading="{% if include.eager and forloop.index <= 6 %}eager{% else %}lazy{% endif %}"
