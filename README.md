@@ -18,7 +18,7 @@ Write your short story here. You can use **bold**, *italics*, and links.
 A blank line starts a new paragraph.
 ```
 
-Keep the `photo` value unchanged so the story stays connected to its image. The invisible `<!-- ... -->` comment in each starter file describes the photo and can be removed. Longer stories scroll inside the back of the card. Readers can select **Back to photo** or press **Escape** to turn it over again.
+Keep the `photo` value unchanged so the story stays connected to its image. The invisible `<!-- ... -->` comment in each starter file describes the photo and can be removed. Click the open card again to return to its photo, or select another photo to close the current story and open the next one. Only one story stays open at a time. Longer stories scroll inside the card, then scrolling continues down the gallery when the story reaches its end. Keyboard users can press **Enter**, **Space**, or **Escape** from the story to turn it over again. Links and text selection inside a story still work.
 
 | Photo | Markdown file |
 | --- | --- |

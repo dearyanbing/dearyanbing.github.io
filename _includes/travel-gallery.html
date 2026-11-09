@@ -16,12 +16,11 @@
              decoding="async">
       </button>
       <div class="travel-card__back" id="travel-story-{{ photo.story }}" aria-hidden="true" inert>
-        <div class="travel-card__story" role="region" tabindex="0"
-             aria-label="Story behind the photo: {{ photo.alt | escape }}">
+        <div class="travel-card__story" role="region" tabindex="0" aria-keyshortcuts="Enter Space Escape"
+             aria-label="Story behind the photo: {{ photo.alt | escape }}. Click again or press Escape to return to the photo.">
           {% if story.title and story.title != "" %}<h3>{{ story.title | escape }}</h3>{% endif %}
           {{ story.content | default: "" | markdownify }}
         </div>
-        <button class="travel-card__return" type="button">Back to photo</button>
       </div>
     </div>
   </div>

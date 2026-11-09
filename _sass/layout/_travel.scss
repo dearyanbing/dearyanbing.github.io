@@ -73,18 +73,19 @@
   &__back {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
     padding: 0.85rem;
     color: #433c35;
     background: #fffdf8;
     transform: rotateY(180deg);
+    cursor: pointer;
   }
 
   &__story {
     flex: 1;
     min-height: 0;
     overflow-y: auto;
-    overscroll-behavior: contain;
+    // Continue scrolling the gallery when the story fits or reaches its end.
+    overscroll-behavior-y: auto;
     overflow-wrap: anywhere;
     font-size: 0.8rem;
     line-height: 1.5;
@@ -105,19 +106,6 @@
     a {
       color: #65502d;
     }
-  }
-
-  &__return {
-    align-self: flex-start;
-    flex-shrink: 0;
-    padding: 0.2rem 0;
-    color: #65502d;
-    background: transparent;
-    border: 0;
-    font: inherit;
-    font-size: 0.65rem;
-    text-decoration: underline;
-    cursor: pointer;
   }
 
   @media (prefers-reduced-motion: reduce) {
