@@ -6,13 +6,6 @@
   height: 1200
   thumbnail_width: 800
 
-- image: /images/travel/img_0437.jpg
-  story: img_0437
-  thumbnail: /images/travel/img_0437_thumb.jpg
-  alt: "Sunlight filtering through a large tree above stone temple ruins"
-  width: 1200
-  height: 1600
-  thumbnail_width: 600
 
 - image: /images/travel/img_0695.jpg
   story: img_0695
@@ -21,6 +14,22 @@
   width: 1296
   height: 1600
   thumbnail_width: 648
+
+- image: /images/travel/bali.jpg
+  story: bali
+  thumbnail: /images/travel/bali.jpg
+  alt: "ocean and sky in bali"
+  width: 1200
+  height: 1600
+  thumbnail_width: 600
+  
+- image: /images/travel/img_0437.jpg
+  story: img_0437
+  thumbnail: /images/travel/img_0437_thumb.jpg
+  alt: "Sunlight filtering through a large tree above stone temple ruins"
+  width: 1200
+  height: 1600
+  thumbnail_width: 600
 
 - image: /images/travel/img_0943.jpg
   story: img_0943
@@ -34,6 +43,14 @@
   story: img_0083
   thumbnail: /images/travel/img_0083_thumb.jpg
   alt: "Blossoming branches illuminated by streetlights at night"
+  width: 1200
+  height: 1600
+  thumbnail_width: 600
+  
+- image: /images/travel/ribbon.jpg
+  story: ribbon
+  thumbnail: /images/travel/ribbon.jpg
+  alt: "walking in the mist"
   width: 1200
   height: 1600
   thumbnail_width: 600
@@ -53,6 +70,22 @@
   width: 1600
   height: 1600
   thumbnail_width: 800
+  
+- image: /images/travel/Angor_Wat.jpg
+  story: Angor_Wat
+  thumbnail: /images/travel/Angor_Wat.jpg
+  alt: "Post sunrise view of a temple and the sky"
+  width: 1200
+  height: 1600
+  thumbnail_width: 600
+  
+- image: /images/travel/toyalake.jpg
+  story: toyalake
+  thumbnail: /images/travel/toyalake.jpg
+  alt: "lake toya"
+  width: 1200
+  height: 1600
+  thumbnail_width: 600
 
 - image: /images/travel/img_6425.jpg
   story: img_6425
@@ -77,3 +110,11 @@
   width: 1291
   height: 1600
   thumbnail_width: 645
+  
+- image: /images/travel/thailand.jpg
+  story: thailand
+  thumbnail: /images/travel/thailand.jpg
+  alt: "me holding a coconut"
+  width: 1200
+  height: 1600
+  thumbnail_width: 600
