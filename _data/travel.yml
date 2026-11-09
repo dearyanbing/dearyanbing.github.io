@@ -31,13 +31,6 @@
   height: 1600
   thumbnail_width: 667
 
-- image: /images/travel/paragliding.jpg
-  story: paragliding
-  thumbnail: /images/travel/paragliding_thumb.jpg
-  alt: "A green paraglider above a turquoise ocean and a rocky coastline"
-  width: 1200
-  height: 1600
-  thumbnail_width: 600
 
 - image: /images/travel/img_0437.jpg
   story: img_0437
