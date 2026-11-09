@@ -1,29 +1,133 @@
-/* Preserve each photo's proportions in a responsive, evenly spaced gallery. */
+/* Compact photo cards with Markdown stories on the reverse. */
 .travel-gallery {
-  column-count: 1;
-  column-gap: 1rem;
-  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.8rem;
+  margin: 1rem 0 1.5rem;
 
-  @media (min-width: 600px) {
-    column-count: 2;
+  @media (min-width: 480px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  &__item {
-    display: block;
-    break-inside: avoid;
-    margin-bottom: 1rem;
-    border-radius: 8px;
+  @media (min-width: 800px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
 
-    &:focus-visible {
-      outline: 3px solid var(--global-link-color);
-      outline-offset: 4px;
-    }
+.page__content .travel-gallery__intro {
+  color: var(--global-text-color);
+  font-size: 0.8rem;
+}
+
+.travel-card {
+  min-width: 0;
+  height: 230px;
+  perspective: 1000px;
+  border-radius: 8px;
+
+  @media (min-width: 480px) {
+    height: clamp(140px, 24vh, 190px);
+  }
+
+  &:focus-within {
+    outline: 3px solid var(--global-link-color);
+    outline-offset: 4px;
+  }
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.55s ease;
+  }
+
+  &.is-flipped &__inner {
+    transform: rotateY(180deg);
+  }
+
+  &__photo,
+  &__back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: 8px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    box-shadow: 0 2px 10px rgba(#000, 0.08);
+  }
+
+  &__photo {
+    display: block;
+    padding: 0;
+    background: var(--global-border-color);
+    cursor: pointer;
   }
 
   img {
     display: block;
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__back {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.85rem;
+    color: #433c35;
+    background: #fffdf8;
+    transform: rotateY(180deg);
+  }
+
+  &__story {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    overflow-wrap: anywhere;
+    font-size: 0.8rem;
+    line-height: 1.5;
+
+    &:focus {
+      outline: none; // The whole card already has a visible focus outline.
+    }
+
+    h3 {
+      margin: 0 0 0.5em;
+      font-size: 1.1em;
+    }
+
+    p {
+      margin: 0 0 0.65em;
+    }
+
+    a {
+      color: #65502d;
+    }
+  }
+
+  &__return {
+    align-self: flex-start;
+    flex-shrink: 0;
+    padding: 0.2rem 0;
+    color: #65502d;
+    background: transparent;
+    border: 0;
+    font: inherit;
+    font-size: 0.65rem;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__inner {
+      transition: none;
+    }
   }
 }

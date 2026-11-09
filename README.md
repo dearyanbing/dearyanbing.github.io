@@ -1,6 +1,42 @@
 # Academic Pages
 **Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
 
+## Writing travel stories
+
+Each photo in the Travel With Me gallery has a Markdown file in [`_travel_stories/`](_travel_stories/). The cards start blank. Write below the second `---` line to add a story; you can also fill in the optional `title`.
+
+For example, edit [`_travel_stories/img_7228.md`](_travel_stories/img_7228.md), which belongs to the first photo (palm trees at sunset):
+
+```markdown
+---
+photo: img_7228
+title: "A sunset to remember"
+---
+
+Write your short story here. You can use **bold**, *italics*, and links.
+
+A blank line starts a new paragraph.
+```
+
+Keep the `photo` value unchanged so the story stays connected to its image. The invisible `<!-- ... -->` comment in each starter file describes the photo and can be removed. Longer stories scroll inside the back of the card. Readers can select **Back to photo** or press **Escape** to turn it over again.
+
+| Photo | Markdown file |
+| --- | --- |
+| Palm trees at sunset | [`img_7228.md`](_travel_stories/img_7228.md) |
+| Sunlight over temple ruins | [`img_0437.md`](_travel_stories/img_0437.md) |
+| Pink and purple evening sky | [`img_0695.md`](_travel_stories/img_0695.md) |
+| Lights reflected in water | [`img_0943.md`](_travel_stories/img_0943.md) |
+| Blossoms at night | [`img_0083.md`](_travel_stories/img_0083.md) |
+| Sunset above the clouds | [`img_7137.md`](_travel_stories/img_7137.md) |
+| Rainbow in a green garden | [`img_20200529_090453.md`](_travel_stories/img_20200529_090453.md) |
+| Colorful bouquet | [`img_6425.md`](_travel_stories/img_6425.md) |
+| Sunlight through a hand | [`img_6511.md`](_travel_stories/img_6511.md) |
+| Path toward autumn trees | [`img_9263.md`](_travel_stories/img_9263.md) |
+
+On GitHub, open the matching file, select the pencil icon, write your story, and choose **Commit changes** on `main`. GitHub Actions rebuilds the site automatically, and the story appears in both galleries.
+
+To add another photo, add its image information and a unique `story` value to `_data/travel.yml`, then create a Markdown file with the matching `photo` value. The order of `_data/travel.yml` controls the gallery order.
+
 ![Academic Pages template example](images/themes/homepage-light.png "Academic Pages template example")
 
 # Getting Started

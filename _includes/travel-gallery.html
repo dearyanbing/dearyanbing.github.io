@@ -1,13 +1,30 @@
+<p class="travel-gallery__intro">click the photo for further unveiling</p>
 <div class="travel-gallery">
   {% for photo in site.data.travel %}
-  <a class="travel-gallery__item" href="{{ photo.image | relative_url }}" aria-label="View larger photo: {{ photo.alt | escape }}">
-    <img src="{{ photo.thumbnail | relative_url }}"
-         srcset="{{ photo.thumbnail | relative_url }} {{ photo.thumbnail_width }}w, {{ photo.image | relative_url }} {{ photo.width }}w"
-         sizes="(max-width: 599px) calc(100vw - 2rem), (max-width: 924px) calc((100vw - 3rem) / 2), 400px"
-         alt="{{ photo.alt | escape }}"
-         width="{{ photo.width }}" height="{{ photo.height }}"
-         loading="{% if include.eager and forloop.index <= 2 %}eager{% else %}lazy{% endif %}"
-         decoding="async">
-  </a>
+  {% assign story = site.travel_stories | where: "photo", photo.story | first %}
+  <div class="travel-card">
+    <div class="travel-card__inner">
+      <button class="travel-card__photo" type="button"
+              aria-label="Read the story behind this photo: {{ photo.alt | escape }}"
+              aria-expanded="false" aria-controls="travel-story-{{ photo.story }}">
+        <img src="{{ photo.thumbnail | relative_url }}"
+             srcset="{{ photo.thumbnail | relative_url }} {{ photo.thumbnail_width }}w, {{ photo.image | relative_url }} {{ photo.width }}w"
+             sizes="(max-width: 479px) calc(100vw - 2rem), (max-width: 799px) calc((100vw - 3rem) / 2), 300px"
+             alt="{{ photo.alt | escape }}"
+             width="{{ photo.width }}" height="{{ photo.height }}"
+             loading="{% if include.eager and forloop.index <= 6 %}eager{% else %}lazy{% endif %}"
+             decoding="async">
+      </button>
+      <div class="travel-card__back" id="travel-story-{{ photo.story }}" aria-hidden="true" inert>
+        <div class="travel-card__story" role="region" tabindex="0"
+             aria-label="Story behind the photo: {{ photo.alt | escape }}">
+          {% if story.title and story.title != "" %}<h3>{{ story.title | escape }}</h3>{% endif %}
+          {{ story.content | default: "" | markdownify }}
+        </div>
+        <button class="travel-card__return" type="button">Back to photo</button>
+      </div>
+    </div>
+  </div>
   {% endfor %}
 </div>
+<script src="{{ '/assets/js/travel-gallery.js' | relative_url }}" defer></script>
