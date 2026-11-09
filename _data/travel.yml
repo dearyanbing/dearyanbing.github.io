@@ -72,14 +72,6 @@
   height: 1600
   thumbnail_width: 600
 
-- image: /images/travel/img_20200529_090453.jpg
-  story: img_20200529_090453
-  thumbnail: /images/travel/img_20200529_090453_thumb.jpg
-  alt: "Sunlight and a small rainbow across a green garden"
-  width: 1600
-  height: 1600
-  thumbnail_width: 800
-  
 - image: /images/travel/Angor_Wat.jpg
   story: Angor_Wat
   thumbnail: /images/travel/Angor_Wat_thumb.jpg
@@ -88,13 +80,14 @@
   height: 1200
   thumbnail_width: 800
 
-- image: /images/travel/toyalake.jpg
-  story: toyalake
-  thumbnail: /images/travel/toyalake_thumb.jpg
-  alt: "lake toya"
-  width: 1200
+- image: /images/travel/img_20200529_090453.jpg
+  story: img_20200529_090453
+  thumbnail: /images/travel/img_20200529_090453_thumb.jpg
+  alt: "Sunlight and a small rainbow across a green garden"
+  width: 1600
   height: 1600
-  thumbnail_width: 600
+  thumbnail_width: 800
+
 
 - image: /images/travel/img_6425.jpg
   story: img_6425
@@ -112,13 +105,6 @@
   height: 1600
   thumbnail_width: 600
 
-- image: /images/travel/img_9263.jpg
-  story: img_9263
-  thumbnail: /images/travel/img_9263_thumb.jpg
-  alt: "A narrow path between buildings leading toward autumn trees"
-  width: 1291
-  height: 1600
-  thumbnail_width: 645
   
 - image: /images/travel/thailand.jpg
   story: thailand
@@ -127,3 +113,19 @@
   width: 1200
   height: 1600
   thumbnail_width: 600
+
+- image: /images/travel/toyalake.jpg
+  story: toyalake
+  thumbnail: /images/travel/toyalake_thumb.jpg
+  alt: "lake toya"
+  width: 1200
+  height: 1600
+  thumbnail_width: 600
+
+- image: /images/travel/img_9263.jpg
+  story: img_9263
+  thumbnail: /images/travel/img_9263_thumb.jpg
+  alt: "A narrow path between buildings leading toward autumn trees"
+  width: 1291
+  height: 1600
+  thumbnail_width: 645
