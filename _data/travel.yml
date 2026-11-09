@@ -17,12 +17,28 @@
 
 - image: /images/travel/bali.jpg
   story: bali
-  thumbnail: /images/travel/bali.jpg
+  thumbnail: /images/travel/bali_thumb.jpg
   alt: "ocean and sky in bali"
+  width: 1600
+  height: 1180
+  thumbnail_width: 800
+
+- image: /images/travel/indonesiafield.jpg
+  story: indonesiafield
+  thumbnail: /images/travel/indonesiafield_thumb.jpg
+  alt: "A green rice field beside a red-roofed building beneath a blue sky"
+  width: 1334
+  height: 1600
+  thumbnail_width: 667
+
+- image: /images/travel/paragliding.jpg
+  story: paragliding
+  thumbnail: /images/travel/paragliding_thumb.jpg
+  alt: "A green paraglider above a turquoise ocean and a rocky coastline"
   width: 1200
   height: 1600
   thumbnail_width: 600
-  
+
 - image: /images/travel/img_0437.jpg
   story: img_0437
   thumbnail: /images/travel/img_0437_thumb.jpg
@@ -49,11 +65,11 @@
   
 - image: /images/travel/ribbon.jpg
   story: ribbon
-  thumbnail: /images/travel/ribbon.jpg
+  thumbnail: /images/travel/ribbon_thumb.jpg
   alt: "walking in the mist"
-  width: 1200
+  width: 1372
   height: 1600
-  thumbnail_width: 600
+  thumbnail_width: 686
 
 - image: /images/travel/img_7137.jpg
   story: img_7137
@@ -73,15 +89,15 @@
   
 - image: /images/travel/Angor_Wat.jpg
   story: Angor_Wat
-  thumbnail: /images/travel/Angor_Wat.jpg
+  thumbnail: /images/travel/Angor_Wat_thumb.jpg
   alt: "Post sunrise view of a temple and the sky"
-  width: 1200
-  height: 1600
-  thumbnail_width: 600
-  
+  width: 1600
+  height: 1200
+  thumbnail_width: 800
+
 - image: /images/travel/toyalake.jpg
   story: toyalake
-  thumbnail: /images/travel/toyalake.jpg
+  thumbnail: /images/travel/toyalake_thumb.jpg
   alt: "lake toya"
   width: 1200
   height: 1600
@@ -113,7 +129,7 @@
   
 - image: /images/travel/thailand.jpg
   story: thailand
-  thumbnail: /images/travel/thailand.jpg
+  thumbnail: /images/travel/thailand_thumb.jpg
   alt: "me holding a coconut"
   width: 1200
   height: 1600

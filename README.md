@@ -32,10 +32,44 @@ Keep the `photo` value unchanged so the story stays connected to its image. The 
 | Colorful bouquet | [`img_6425.md`](_travel_stories/img_6425.md) |
 | Sunlight through a hand | [`img_6511.md`](_travel_stories/img_6511.md) |
 | Path toward autumn trees | [`img_9263.md`](_travel_stories/img_9263.md) |
+| Ocean and sky in Bali | [`bali.md`](_travel_stories/bali.md) |
+| Rice field in Indonesia | [`indonesiafield.md`](_travel_stories/indonesiafield.md) |
+| Paragliding over the ocean | [`paragliding.md`](_travel_stories/paragliding.md) |
+| Angkor Wat after sunrise | [`Angor_wat.md`](_travel_stories/Angor_wat.md) |
+| Walking in the mist on Ribbon Island | [`ribbon.md`](_travel_stories/ribbon.md) |
+| Lake Toya | [`toyalake.md`](_travel_stories/toyalake.md) |
+| Holding a coconut in Thailand | [`thailand.md`](_travel_stories/thailand.md) |
 
 On GitHub, open the matching file, select the pencil icon, write your story, and choose **Commit changes** on `main`. GitHub Actions rebuilds the site automatically, and the story appears in both galleries.
 
-To add another photo, add its image information and a unique `story` value to `_data/travel.yml`, then create a Markdown file with the matching `photo` value. The order of `_data/travel.yml` controls the gallery order.
+### Adding new travel photos
+
+`travel w. me/` stores the original photos and is excluded from the published site. Uploading a photo there does not add it to the gallery. The gallery displays the image paths listed in `_data/travel.yml`, using JPEGs in `images/travel/`.
+
+1. Export the new photo as a JPEG in `images/travel/`, preserving its original proportions. Also create a smaller thumbnail. On macOS, for example:
+
+   ```sh
+   sips -s format jpeg -s formatOptions 85 -Z 1600 'travel w. me/new_photo.HEIC' --out images/travel/new_photo.jpg
+   sips -s format jpeg -s formatOptions 82 -Z 800 images/travel/new_photo.jpg --out images/travel/new_photo_thumb.jpg
+   sips -g pixelWidth -g pixelHeight images/travel/new_photo.jpg images/travel/new_photo_thumb.jpg
+   ```
+
+2. Add an entry to `_data/travel.yml`. Use the actual JPEG width and height reported above, and the thumbnail's actual width. For an iPhone photo with a rotation tag, use its upright dimensions: portrait photos should have a height greater than their width. This example is for a landscape photo:
+
+   ```yaml
+   - image: /images/travel/new_photo.jpg
+     story: new_photo
+     thumbnail: /images/travel/new_photo_thumb.jpg
+     alt: "Describe what appears in the photo"
+     width: 1600
+     height: 1200
+     thumbnail_width: 800
+   ```
+
+3. Create `_travel_stories/new_photo.md` with `photo: new_photo` in its front matter, using the story example above. You can leave the title and body blank until you are ready to write.
+4. Commit the JPEG, thumbnail, gallery entry, and story file to `main`. The website rebuilds automatically.
+
+Filenames and letter case must match exactly. The order of `_data/travel.yml` controls the gallery order.
 
 ![Academic Pages template example](images/themes/homepage-light.png "Academic Pages template example")
 
