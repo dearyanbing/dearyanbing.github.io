@@ -23,7 +23,7 @@ repository               : "dearyanbing/dearyanbing.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  name             : "Yanbing"
+  name             : "Yanbing Zhao"
   pronouns         : "she/her"  
   bio              : "M.M.Analytics student at McGill University"
   location         : "Montreal, QC, Canada"
