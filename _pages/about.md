@@ -6,13 +6,16 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hello :D I am a current M.M.Analytics student at McGill University. Prior to McGill, I obtained my undergraduate degree in Advertising, at Shanghai International Studies University. My current research interest revolves around Digital Platform Governance, Native Advertising and the Effect of AI-Mediation on Online Posts. 
+Hello :D I am a current M.M.Analytics student at McGill University. Prior to McGill, I obtained my undergraduate degree in Advertising, at Shanghai International Studies University. My current research interest revolves around Digital Platform Governance, Native Advertising and the Effect of AI-Mediation on Online Posts:
+- **Digital Platform Monetization**: When creators commercialize their content, do they change the proportion of topics they cover or the range of content they continue to share freely? 
+- **AI-mediated commercial content**: How does creators’ use of Generative AI in planning or producing promotional posts affect audience responses, including perceptions of authenticity? Will AI-mediated commercialized contents be more generic than non-commercialized AI-mediated content?
+- **Disclosure within social content**: When creators integrate micro influencer advertising into their regular posts, how do sponsorship presentation and disclosure affect users’ engagement and trust?  
 
 ## My Technical Skills: 
   - **Programming**: Python, R, SQL, SPSS.
-  - **Statistical Modeling**: Linear Regression, Logistic Regression, Autoregression, Hypothesis Testing.
+  - **Econometrics**: Linear Regression, Logistic Regression, Autoregression, Hypothesis Testing.
   - **Machine Learning**: Neural Networks, Random Forest, Gradient Boosting, KNN.
-  - **NLP**: TF-IDF, Sentiment Analysis (VADER, SentiStrength), Lift, MDS, LDA Topic Modeling, Attention Mechanisms
+  - **NLP**: TF-IDF, Sentiment Analysis (VADER, SentiStrength), Lift, MDS, LDA Topic Modeling, BERT, Attention Mechanisms
 
 My Research Experience:
 ------
