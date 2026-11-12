@@ -64,13 +64,7 @@
   height: 1600
   thumbnail_width: 686
 
-- image: /images/travel/anaboardingpass.jpg
-  story: anaboardingpass
-  thumbnail: /images/travel/anaboardingpass_thumb.jpg
-  alt: "My plane ticket"
-  width: 1296
-  height: 1600
-  thumbnail_width: 648
+
 
 - image: /images/travel/img_7137.jpg
   story: img_7137
