@@ -8,10 +8,11 @@ redirect_from:
 ---
 Hello :D I am a current M.M.Analytics student at McGill University. Prior to McGill, I obtained my undergraduate degree in Advertising, at Shanghai International Studies University. 
 
-My current research interest revolves around Digital Platform Governance, Native Advertising and the Effect of AI-Mediation on Online Posts:
-- **Digital Platform Monetization**: When creators commercialize their content, do they change the proportion of topics they cover or the range of content they continue to share freely? 
-- **AI-mediated commercial content**: How does creators’ use of Generative AI in planning or producing promotional posts affect audience responses, including perceptions of authenticity? Will AI-mediated commercialized contents be more generic than non-commercialized AI-mediated content?
-- **Disclosure within social content**: When creators integrate micro influencer advertising into their regular posts, how do sponsorship presentation and disclosure affect users’ engagement and trust?  
+My current research interest revolves around Digital Platform Governance, AI Licensing and the Effect of AI-Mediation on creators' creativity:
+- **For digital platforms**: When digital platforms license their content to AI, does AI help them attract more traffic? Or does it push them further to the margins, as readers turn to the chatbot instead of the source platform to grasp the information?
+- **For policy makers and copyright holders**: Does licensing actually protect a platform’s content copyright, or does it only make sure they get cited? If a platform does not license, will AI simply stop citing it while still drawing on its content without disclosure, leaving the platform with the least visibility and the least control of their content?
+- **For readers**: Do the citations in generative AI answers send readers’ attention back to the digital platform itself, or do readers keep browsing through the AI and never visit the original source? Will the digital platforms’ current audience turn to Generative AI chatbots through which they find the content is accessible?
+ 
 
 ## My Technical Skills: 
   - **Programming**: Python, R, SQL, SPSS.
